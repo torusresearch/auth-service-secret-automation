@@ -55,7 +55,7 @@ async function main() {
     const secretName = `${environment}/web3-auth/auth-service-api`;
     const secretKey = `${app.toUpperCase()}_GOOGLE_WEB_CLIENT_SECRET`;
   // Encrypt secret with KMS
-  const kmsAlias = `alias/mmcx/${environment}/auth-service`;
+  const kmsAlias = `alias/mmcx/${environment}/auth-service-api`;
   console.log(`🔒 Encrypting token with KMS alias: ${kmsAlias}`);
   const encryptedClientSecret = await encryptWithKMS(config.webClientSecret, kmsAlias);
   console.log('✅ Token encrypted successfully');
