@@ -89,6 +89,7 @@ async function promptForInputs() {
     message: 'Select the environment:',
     choices: [
       { name: 'Development', value: 'dev' },
+      { name: 'UAT', value: 'uat' },
       { name: 'Production', value: 'prod' }
     ]
   });
@@ -179,7 +180,7 @@ async function generateAppleClientSecret(environment, app, config) {
   console.log(`✅ Generated ${app.toUpperCase()} token successfully`);
 
   // Encrypt token with KMS
-  const kmsAlias = `alias/mmcx/${environment}/auth-service`;
+  const kmsAlias = `alias/mmcx/${environment}/auth-service-api`;
   console.log(`🔒 Encrypting token with KMS alias: ${kmsAlias}`);
   const encryptedToken = await encryptWithKMS(token, kmsAlias);
   console.log('✅ Token encrypted successfully');
