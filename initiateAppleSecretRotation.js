@@ -74,6 +74,17 @@ async function updateSecretValue(secretName, key, value) {
 async function promptForInputs() {
   console.log('🍎 Apple Client Secret Rotation Tool\n');
   
+  // confirm with user if aws cli is installed and configured
+  const awsCliInstalled = await confirm({
+    message: 'Is the AWS CLI installed and configured?',
+    default: true
+  });
+  
+  if (!awsCliInstalled) { 
+    console.log('Please install and configure the AWS CLI to proceed.');
+    return;
+  }
+
   const environment = await select({
     message: 'Select the environment:',
     choices: [
