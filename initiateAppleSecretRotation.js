@@ -124,7 +124,7 @@ async function generateAppleClientSecret(environment, app, config) {
   return {
     environment,
     app,
-    encryptedClientSecret: encryptedClientSecret,
+    encryptedToken,
     secretName: secretName,
     secretKey: secretKey,
     kmsAlias: kmsAlias
