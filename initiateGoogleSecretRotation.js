@@ -21,8 +21,8 @@ async function promptForInputs() {
       message: 'Select the environment:',
       choices: [
         { name: 'Development', value: 'dev' },
-        { name: 'Production', value: 'prod' },
-        { name: 'UAT', value: 'uat' }
+        { name: 'UAT', value: 'uat' },
+        { name: 'Production', value: 'prd' },
       ]
     });
     
