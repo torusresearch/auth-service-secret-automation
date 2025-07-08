@@ -23,7 +23,7 @@ async function promptForInputs() {
     choices: [
       { name: 'Development', value: 'dev' },
       { name: 'UAT', value: 'uat' },
-      { name: 'Production', value: 'prod' }
+      { name: 'Production', value: 'prd' },
     ]
   });
   
