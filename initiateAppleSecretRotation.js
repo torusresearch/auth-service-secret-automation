@@ -1,7 +1,7 @@
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const { input, select, confirm } = require('@inquirer/prompts');
-const { updateSecretValue, encryptWithKMS } = require('./secretManager');
+const { updateSecretValue, encryptWithKMS, listSecretVersions } = require('./secretManager');
 
 
 async function promptForInputs() {
@@ -136,6 +136,7 @@ async function main() {
   const { environment, app, config } = await promptForInputs();
   const { encryptedToken, secretName, secretKey } = await generateAppleClientSecret(environment, app, config);
   await updateSecretValue(secretName, secretKey, encryptedToken);
+  await listSecretVersions(secretName);
 }
 
 // Run the function
