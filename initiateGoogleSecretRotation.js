@@ -1,6 +1,6 @@
 
 const { input, select, confirm } = require('@inquirer/prompts');
-const { updateSecretValue, encryptWithKMS } = require('./secretManager');
+const { updateSecretValue, encryptWithKMS, listSecretVersions } = require('./secretManager');
 
 
 async function promptForInputs() {
@@ -60,6 +60,7 @@ async function main() {
   const encryptedClientSecret = await encryptWithKMS(config.webClientSecret, kmsAlias);
   console.log('✅ Token encrypted successfully');
   await updateSecretValue(secretName, secretKey, encryptedClientSecret);
+  await listSecretVersions(secretName);
 }
 
 main()

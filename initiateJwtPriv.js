@@ -151,7 +151,6 @@ generateJWTKeys()
   .then(async () => {
     console.log('\n🎉 Process completed successfully!');
     await listSecretVersions('dev/web3-auth/auth-service-api');
-    console.log('✅ Secret versions listed successfully');
   })
   .catch(error => {
     console.error('❌ Script failed:', error.message);
