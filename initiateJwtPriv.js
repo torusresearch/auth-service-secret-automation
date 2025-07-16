@@ -25,8 +25,8 @@ async function generateJWTKeys() {
       message: 'Select the environment:',
       choices: [
         { name: 'Development', value: 'dev' },
-        { name: 'Staging', value: 'staging' },
-        { name: 'Production', value: 'prod' }
+        { name: 'Staging', value: 'uat' },
+        { name: 'Production', value: 'prd' }
       ]
     });
 
