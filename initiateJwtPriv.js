@@ -314,10 +314,12 @@ async function generateJWTKeys() {
     
     // Update JWT_PRIV with encrypted private key
     await updateSecretValue(secretName, 'JWT_PRIV', encryptedPrivateKey);
+    await updateSecretValue(secretName, 'JWT_PRIV_DEV', encryptedPrivateKey);
     console.log('✅ JWT_PRIV updated successfully');
     
     // Update JWT_PUB with unencrypted public key
     await updateSecretValue(secretName, 'JWT_PUB', publicKeyBase64);
+    await updateSecretValue(secretName, 'JWT_PUB_DEV', publicKeyBase64);
     console.log('✅ JWT_PUB updated successfully');
 
     // Step 9: Create result object with consistent structure
