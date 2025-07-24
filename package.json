@@ -15,6 +15,7 @@
     "@aws-sdk/client-secrets-manager": "^3.839.0",
     "@inquirer/prompts": "^3.3.0",
     "dotenv": "^17.0.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "jsrsasign": "^11.1.0"
   }
 }
