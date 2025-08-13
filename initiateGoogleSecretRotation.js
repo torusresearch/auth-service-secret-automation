@@ -35,10 +35,10 @@ async function promptForInputs() {
     });
     
     // Now ask for app-specific values
-    const webClientSecret = await input({
+    const webClientSecret = (await input({
       message: `Enter ${app.toUpperCase()} Google Web Client Secret:`,
       validate: (input) => input.trim() !== '' || 'Client Secret cannot be empty'
-    });
+    })).trim();
     
     return {
       environment,

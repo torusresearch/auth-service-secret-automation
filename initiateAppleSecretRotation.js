@@ -36,29 +36,29 @@ async function promptForInputs() {
   });
   
   // Now ask for app-specific values
-  const clientId = await input({
+  const clientId = (await input({
     message: `Enter ${app.toUpperCase()} Apple Client ID:`,
     validate: (input) => input.trim() !== '' || 'Client ID cannot be empty'
-  });
+  })).trim();
   
-  const teamId = await input({
+  const teamId = (await input({
     message: `Enter ${app.toUpperCase()} Apple Team ID:`,
     validate: (input) => input.trim() !== '' || 'Team ID cannot be empty'
-  });
+  })).trim();
   
-  const keyPath = await input({
+  const keyPath = (await input({
     message: `Enter ${app.toUpperCase()} Apple Key Path:`,
     validate: (input) => {
       if (input.trim() === '') return 'Key path cannot be empty';
       if (!fs.existsSync(input.trim())) return 'Key file does not exist';
       return true;
     }
-  });
+  })).trim();
   
-  const keyId = await input({
+  const keyId = (await input({
     message: `Enter ${app.toUpperCase()} Apple Key ID:`,
     validate: (input) => input.trim() !== '' || 'Key ID cannot be empty'
-  });
+  })).trim();
   
   return {
     environment,
